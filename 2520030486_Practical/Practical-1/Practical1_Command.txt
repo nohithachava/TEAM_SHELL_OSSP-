@@ -1,0 +1,101 @@
+mohanaasmitha@LAPTOP-D7DSGMO2:~$ uname
+Linux
+mohanaasmitha@LAPTOP-D7DSGMO2:~$ lscpu
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             39 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      16
+  On-line CPU(s) list:       0-15
+Vendor ID:                   GenuineIntel
+  Model name:                13th Gen Intel(R) Core(TM) i5-13450HX
+    CPU family:              6
+    Model:                   183
+    Thread(s) per core:      2
+    Core(s) per socket:      8
+    Socket(s):               1
+    Stepping:                1
+    BogoMIPS:                5222.40
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr ss
+                             e sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable
+                              nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2api
+                             c movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowpre
+                             fetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi
+                             1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv
+                             1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_cl
+                             ear serialize ibt flush_l1d arch_capabilities
+Virtualization features:
+  Virtualization:            VT-x
+  Hypervisor vendor:         Microsoft
+  Virtualization type:       full
+Caches (sum of all):
+  L1d:                       384 KiB (8 instances)
+  L1i:                       256 KiB (8 instances)
+  L2:                        10 MiB (8 instances)
+  L3:                        20 MiB (1 instance)
+NUMA:
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0-15
+Vulnerabilities:
+  Gather data sampling:      Not affected
+  Ghostwrite:                Not affected
+  Indirect target selection: Not affected
+  Itlb multihit:             Not affected
+  L1tf:                      Not affected
+  Mds:                       Not affected
+  Meltdown:                  Not affected
+  Mmio stale data:           Not affected
+  Old microcode:             Not affected
+  Reg file data sampling:    Mitigation; Clear Register File
+  Retbleed:                  Mitigation; Enhanced IBRS
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_D
+                             IS_S
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+mohanaasmitha@LAPTOP-D7DSGMO2:~$ lsblk
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 356.9M  1 disk
+sdb    8:16   0 159.4M  1 disk
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+                               /
+mohanaasmitha@LAPTOP-D7DSGMO2:~$ ps
+    PID TTY          TIME CMD
+    331 pts/0    00:00:00 bash
+    614 pts/0    00:00:00 ps
+mohanaasmitha@LAPTOP-D7DSGMO2:~$ top
+top - 01:17:40 up 9 min,  1 user,  load average: 0.06, 0.04, 0.00
+Tasks:  25 total,   1 running,  24 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7793.7 total,   6431.8 free,    570.7 used,    944.2 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7222.9 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   24136  15356  11576 S   0.0   0.2   0:00.36 systemd
+      2 root      20   0    3180   2204   2072 S   0.0   0.0   0:00.00 init-systemd(Ub
+      7 root      20   0    3180   2044   1940 S   0.0   0.0   0:00.00 init
+     44 root      19  -1   50428  16740  15476 S   0.0   0.2   0:00.09 systemd-journal
+     76 systemd+  20   0   22416  14520  12024 S   0.0   0.2   0:00.03 systemd-resolve
+     88 root      20   0   35432  12396   9240 S   0.0   0.2   0:00.14 systemd-udevd
+    104 root      20   0    2888   1948   1820 S   0.0   0.0   0:00.02 chronyd-starter
+    105 root      20   0    4472   3120   2868 S   0.0   0.0   0:00.00 cron
+    106 message+  20   0    8796   5416   4740 S   0.0   0.1   0:00.01 dbus-daemon
+    144 root      20   0   44096  29764  14624 S   0.0   0.4   0:00.12 networkd-dispat
+    168 root      20   0   18440   9412   8168 S   0.0   0.1   0:00.04 systemd-logind
+    170 root      20   0 1792300  15336  12552 S   0.0   0.2   0:00.06 wsl-pro-service
+    188 syslog    20   0  220548   5924   4616 S   0.0   0.1   0:00.04 rsyslogd
+    213 root      20   0    5492   2692   2508 S   0.0   0.0   0:00.00 agetty
+    218 root      20   0  123460  32632  18024 S   0.0   0.4   0:00.10 unattended-upgr
+    220 _chrony   20   0   20512   7832   6996 S   0.0   0.1   0:00.03 chronyd
+    239 _chrony   20   0   12096   2400   1760 S   0.0   0.0   0:00.00 chronyd
+    329 root      20   0    3184   1108    980 S   0.0   0.0   0:00.00 SessionLeader
+    330 root      20   0    3200   1248   1108 S   0.0   0.0   0:00.01 Relay(331)
+    331 mohanaa+  20   0    6268   5532   3864 S   0.0   0.1   0:00.04 bash
+    332 root      20   0    8648   5516   4672 S   0.0   0.1   0:00.00 login
+    374 mohanaa+  20   0   22340  13604  10988 S   0.0   0.2   0:00.08 systemd
+    376 mohanaa+  20   0   22916   4136   2132 S   0.0   0.1   0:00.00 (sd-pam)
